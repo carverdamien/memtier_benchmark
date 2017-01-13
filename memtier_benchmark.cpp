@@ -731,6 +731,8 @@ static void* cg_thread_start(void *t)
 
 void size_to_str(unsigned long int size, char *buf, int buf_len)
 {
+  snprintf(buf, buf_len, "%lu", size);
+  /*
     if (size >= 1024*1024*1024) {
         snprintf(buf, buf_len, "%.2fGB", 
             (float) size / (1024*1024*1024));
@@ -740,7 +742,8 @@ void size_to_str(unsigned long int size, char *buf, int buf_len)
     } else {
         snprintf(buf, buf_len, "%.2fKB",
             (float) size / 1024);
-    }    
+    }
+  */
 }
 
 run_stats run_benchmark(int run_id, benchmark_config* cfg, object_generator* obj_gen)
